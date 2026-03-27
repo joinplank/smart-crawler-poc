@@ -21,6 +21,8 @@ Observe → Act → Evaluate → (repeat or finish)
 | `goto_tool` | Navigate to a URL |
 | `click_tool` | Click an element by its index |
 | `type_tool` | Type text into an input by its index |
+| `wait_tool` | Pause for a given number of milliseconds |
+| `scrape_tool` | Scrape all visible page text and save it to `results/<filename>_<timestamp>.txt` |
 | `done_tool` | Signal task completion |
 
 ## Setup
@@ -37,18 +39,16 @@ python3 -m playwright install chromium
 python3 main.py
 ```
 
-**Example task:**
-```
-Go to https://practicetestautomation.com/practice-test-login/ and login with username 'student' and password 'Password123'
-```
+Edit `input.md` with your task description before running.
 
 ## File structure
 
 ```
-main.py          # entry point
-agent.py         # agent loop + browser state extraction
-provider.py      # Gemini function-calling wrapper
-tools.py         # browser tools + JSON schemas
+main.py              # entry point — reads task from input.md
+agent.py             # agent loop + browser state extraction
+gemini_provider.py   # Gemini function-calling wrapper
+tools.py             # browser tools + JSON schemas
 prompts/
-  system.md      # system prompt
+  agent.md           # system prompt
+results/             # scrape output (git-ignored, created on demand)
 ```
