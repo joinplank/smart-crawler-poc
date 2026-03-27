@@ -6,8 +6,6 @@
 # Scrape results
 results/
 
-# Local task input
-input.md
 
 # Python
 __pycache__/
