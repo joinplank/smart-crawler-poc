@@ -11,7 +11,7 @@ Observe → Act → Evaluate → (repeat or finish)
 ```
 
 1. **Observe** — reads the current page (URL, title, interactive elements labeled with index numbers)
-2. **Act** — sends the state to Gemini, which picks a tool to call (`goto`, `click`, `type`, or `done`)
+2. **Act** — sends the state to Gemini, which picks a tool to call (`goto`, `click`, `type`, `wait`, `scrape`, or `done`)
 3. **Evaluate** — checks the result; if `done_tool` was called, finish; otherwise loop
 
 ## Tools
